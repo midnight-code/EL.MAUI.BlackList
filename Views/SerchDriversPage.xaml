@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.SerchDriversPage"
+             xmlns:view="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="view:SerchDriverViewModel"
+             xmlns:model="clr-namespace:EL.MAUI.BlackList.Models"
+             BackgroundColor="Black"
+             xmlns:local="clr-namespace:EL.MAUI.BlackList.Helpers">
+
+    <Shell.TitleView>
+        <Label Text="Найдено в базе" TextColor="#FFFF00" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center"
+       FontFamily="BLAGO"  Margin="7,5,0,2" />
+    </Shell.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DateTimeToLocalDateConverter x:Key="dateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout>
+        <ListView Grid.Row="5" ItemsSource="{Binding DriversColl}" ItemTapped="ListView_ItemTapped">
+            <ListView.Header>
+                <VerticalStackLayout BackgroundColor="Black">
+                    <Label TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontFamily="BLAGO" Text="Найдено в базе:" ></Label>
+                </VerticalStackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type model:Drivers}">
+                    <ViewCell>
+                        <Grid ColumnSpacing="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <HorizontalStackLayout Grid.Column="0">
+                                <Label Text="{Binding FirstName}" Margin="3,0,0,0" TextColor="White" />
+                                <Label Text="{Binding LastName}" Margin="5,0,0,0" TextColor="White"/>
+                                <Label Text="{Binding SecondName}" Margin="5,0,0,0" TextColor="White"/>
+                            </HorizontalStackLayout>
+
+                            <Label Grid.Column="1" Text="{Binding DateRogden, Converter={StaticResource dateConverter}}" TextColor="White" Margin="10,0,0,0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

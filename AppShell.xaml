@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EL.MAUI.BlackList.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EL.MAUI.BlackList"
+    xmlns:model="clr-namespace:EL.MAUI.BlackList.Models"
+    xmlns:views="clr-namespace:EL.MAUI.BlackList.Views" >
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black"
+                  HeightRequest="143">
+                <Image Aspect="AspectFill"
+                       Source="car1.png"
+                       Opacity="0.6" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+    <TabBar>
+        <Tab  Title="Главная"
+             Icon="{x:Static model:Icons.Dashboard}" >
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}"/>
+        </Tab>
+        <Tab Title="Добавить запись"
+             Icon="{x:Static model:Icons.DriverIco}">
+            <ShellContent ContentTemplate="{DataTemplate views:AddDriverPage}"/>
+        </Tab>
+        <Tab Title="Контакты" Icon="{x:Static model:Icons.ContactUs}">
+            <ShellContent ContentTemplate="{DataTemplate views:ContactPage}"/>
+        </Tab>
+        <Tab Title="О программе" Icon="{x:Static model:Icons.People}">
+            <ShellContent ContentTemplate="{DataTemplate views:AboutPage}"/>
+        </Tab>
+    </TabBar>
+    
+</Shell>

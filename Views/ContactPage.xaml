@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.ContactPage"
+             Title="Техподдержка"  BackgroundColor="Black">
+    <Shell.TitleView>
+        <HorizontalStackLayout>
+            <Image VerticalOptions="Start" HorizontalOptions="Center"
+                       Source="car1.png"
+                       Opacity="0.6" HeightRequest="50" WidthRequest="100" />
+            <Label 
+        Text="Контакты"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <VerticalStackLayout>
+        <Label TextColor="White"
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

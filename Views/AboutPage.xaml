@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.AboutPage"
+             Title="О программе"  BackgroundColor="Black">
+    <Shell.TitleView>
+        <HorizontalStackLayout>
+            <Image VerticalOptions="Start" HorizontalOptions="Center"
+                       Source="car1.png"
+                       Opacity="0.6" HeightRequest="50" WidthRequest="100" />
+            <Label 
+        Text="О программе" VerticalOptions="Center" HorizontalOptions="Center"
+        TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <VerticalStackLayout Padding="5">
+            <Image Source="car1.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+            <Label TextColor="White" FontFamily="BLAGO"
+            Text="Добро пожаловать в программу чёрного списка водителей по РФ для таксопарков и арендодателей машин для такси."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        </VerticalStackLayout>
+            <TableView Intent="Menu" VerticalOptions="Center" HorizontalOptions="Center" Grid.ColumnSpan="2" Grid.Row="1">
+                <TableRoot>
+                    <TableSection Title="Вы сможете проверить водителя на наличие в чёрном списке:" TextColor="White">
+                        <TextCell Text="1. Наличие записей в чёрном списке"  TextColor="White"/>
+                        <TextCell Text="2. Валидность водительского удостоверения"  TextColor="White"/>
+                        <TextCell Text="3. Наличие штрафов и лешений в.у."  TextColor="White"/>
+                        <TextCell Text="4. Проверка паспортных данных"  TextColor="White"/>
+                        <TextCell Text="5. Наличие судимостей"  TextColor="White"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+    </Grid>
+    
+    
+</ContentPage>

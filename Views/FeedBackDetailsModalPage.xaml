@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.FeedBackDetailsModalPage"
+             Title="FeedBackDetailsModalPage"
+             xmlns:views="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="views:FeedBackDetailsViewModel"
+             xmlns:model="clr-namespace:EL.MAUI.BlackList.Models"
+             xmlns:local="clr-namespace:EL.MAUI.BlackList.Helpers" BackgroundColor="Black">
+    
+    <Shell.TitleView>
+        <Label Text="Отзыв в деталях" TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DateTimeToLocalDateConverter x:Key="dateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Дата" TextColor="#FFFF00" FontSize="17" FontFamily="BLAGO"  Margin="0,5,0,0" VerticalOptions="Center" HorizontalOptions="Center"  />
+            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Feedback.AddDate, Converter={StaticResource dateConverter}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+            <Label Grid.Row="1" Grid.Column="0" Text="Таксопарк" TextColor="#FFFF00" FontSize="17" FontFamily="BLAGO"  Margin="0,5,0,0" VerticalOptions="Center" HorizontalOptions="Center"  />
+            <Label Grid.Row="1" Grid.Column="1" Text="Город" TextColor="#FFFF00" FontSize="17" FontFamily="BLAGO"  Margin="0,5,0,0" VerticalOptions="Center" HorizontalOptions="Center"  />
+            <Label Grid.Row="1" Grid.Column="2" Text="Регион" TextColor="#FFFF00" FontSize="17" FontFamily="BLAGO"  Margin="0,5,0,0" VerticalOptions="Center" HorizontalOptions="Center"  />
+            <Label Grid.Row="2" Grid.Column="0" Text="{Binding Feedback.TaxiPools.Name}" HorizontalOptions="Center" TextColor="White" Margin="0,7,0,0" />
+            <Label Grid.Row="2" Grid.Column="1" Text="{Binding Feedback.City.Name }" HorizontalOptions="Center" TextColor="White" Margin="0,7,0,0" />
+            <Label Grid.Row="2" Grid.Column="2" Text="{Binding Feedback.City.Region}" HorizontalOptions="Center" TextColor="White" Margin="0,7,0,0" />
+            <Label Grid.Row="3" Grid.ColumnSpan="3" Text="Отзыв" TextColor="#FFFF00" FontSize="17" FontFamily="BLAGO"  Margin="0,15,0,0"
+                   VerticalOptions="Center" HorizontalOptions="Center"  />
+            <Label Grid.Row="4" Grid.ColumnSpan="3" Text="{Binding Feedback.Subjest}" TextColor="White" Margin="7,7,0,0"/>
+            
+            
+            <!--<Editor Grid.Row="1" Grid.ColumnSpan="3" x:Name="editMessage" TextColor="White" AutoSize="TextChanges" />
+            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="Редактировать" BackgroundColor="#FFFF00" TextColor="Black" 
+                    FontAttributes="Bold" FontFamily="BLAGO" FontSize="20" CornerRadius="30" WidthRequest="200" Margin="15,15,15,0" IsVisible="false"/>-->
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
