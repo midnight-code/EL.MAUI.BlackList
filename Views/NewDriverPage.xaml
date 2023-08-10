@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.NewDriverPage"
+             xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="vm:NewDariverPageViewModel"
+             xmlns:model="clr-namespace:EL.MAUI.BlackList.Models"
+             xmlns:local="clr-namespace:EL.MAUI.BlackList.Helpers"
+             BackgroundColor="Black">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}"
+                            IconOverride="{x:Static model:Icons.BackPage}" />
+    </Shell.BackButtonBehavior>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DateTimeToLocalDateConverter x:Key="dateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Shell.TitleView>
+        <Label Text="Данные водителя" TextColor="#FFFF00" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>
+
+    <VerticalStackLayout Margin="0,7,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="noavatar.png" MaximumHeightRequest="75" MaximumWidthRequest="75" Margin="10,0,0,0"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <HorizontalStackLayout Grid.Row="0">
+                    <Label Text="Ф.И.О" FontFamily="BLAGO" FontAttributes="Bold" HorizontalOptions="Center" Margin="5,0,0,0" TextColor="#FFFF00"/>
+                    <Label Text="{Binding Driver.FirstName}" Margin="7,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
+                    <Label Text="{Binding Driver.LastName}" Margin="5,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
+                    <Label Text="{Binding Driver.SecondName}" Margin="5,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="1" >
+                    <Label Text="Дата рождения" FontFamily="BLAGO" FontAttributes="Bold" Margin="5,0,0,0" TextColor="#FFFF00"/>
+                    <Label Text="{Binding Driver.DateRogden, Converter={StaticResource dateConverter}}" Margin="7,0,0,0" TextColor="White" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+            </Grid>
+        </Grid>
+
+        <ListView ItemsSource="{Binding Driver.FeedBacks}" HasUnevenRows="True" Margin="0,7,0,0" HorizontalOptions="Fill" ItemTapped="ListView_ItemTapped">
+            <ListView.Header>
+                <VerticalStackLayout BackgroundColor="Black">
+                    <Label HorizontalOptions="Center" FontAttributes="Bold" FontFamily="BLAGO" Text="Отзывы:" TextColor="#FFFF00" />
+                </VerticalStackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type model:FeedBacks}">
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding AddDate, Converter={StaticResource dateConverter}}" Margin="7,0,0,0" TextColor="White"/>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding City.Name}" Margin="7,0,0,0" TextColor="White"/>
+                                <Label Text="{Binding City.Region}" Margin="7,0,0,0" TextColor="White"/>
+                            </VerticalStackLayout>
+
+                            <Label Grid.Column="2" Text="{Binding Subjest}" Margin="7,0,0,0" TextColor="White"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Row="4" Text="Добавить отзыв" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="15" FontAttributes="Bold"
+                CornerRadius="30" WidthRequest="300" HeightRequest="45" Margin="0,15,0,0" ImageSource="ico_serch.png" ContentLayout="Left" Command="{Binding AddFeedbackDriverCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

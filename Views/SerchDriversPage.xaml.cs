@@ -10,12 +10,5 @@ public partial class SerchDriversPage : ContentPage
 		InitializeComponent();
         BindingContext = new SerchDriverViewModel();
 	}
-    private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-    {
-        var driver = (Drivers)e.Item;
-        var driverDetailsView = new DriverdDetailsPageViewModel { iddriver=driver.Id };
-        var driverPage = new DriverDetailsPage();
-        driverPage.BindingContext = driverDetailsView;
-        await Navigation.PushAsync(driverPage);
-    }
+
 }

@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using EL.MAUI.BlackList.Models;
 using EL.MAUI.BlackList.Services;
+using EL.MAUI.BlackList.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,49 +12,26 @@ using System.Threading.Tasks;
 
 namespace EL.MAUI.BlackList.ViewModel
 {
-    [QueryProperty(nameof(serchDriver), nameof(serchDriver))]
     internal partial class SerchDriverViewModel : ObservableObject
     {
-        private readonly DriverApiServices _driverApiServices;
-        public SerchDriverViewModel()
-        {
-            _driverApiServices = new DriverApiServices();
-        }
 
         [ObservableProperty]
-        private ObservableCollection<Drivers> driversColl = new();
+        private SerchDriver driversColl = new();
 
-        public string serchDriver
+        [ObservableProperty]
+        private string firstname;
+
+        [ObservableProperty]
+        private string lastname;
+        [ObservableProperty]
+        private string secondname;
+
+
+        [RelayCommand]
+        private async Task GetDriverByNameAsync()
         {
-            set => GetDriverByName(value);
-        }
-
-        private async void GetDriverByName(string serchDriver)
-        {
-            DriversColl = new();
-            //Drivers dr = new Drivers()
-            //{
-            //    FirstName = "asldkv;la",
-            //    LastName = "asdvasfd",
-            //    SecondName = "asdvasd"
-            //};
-            //DriversColl.Add(dr);
-
-            var result = await _driverApiServices.GetBaseResponse(serchDriver.Split(',')[0], serchDriver.Split(',')[1], serchDriver.Split(',')[2]);
-            if (result == null)
-            {
-                DriversColl.Add(new Drivers()
-                {
-                    FirstName = "вернуло null"
-                });
-            }
-            else
-            {
-                foreach (Drivers drv in result.Data)
-                {
-                    DriversColl.Add(drv);
-                }
-            }
+            string driver = $"{Firstname},{Lastname},{Secondname}";
+            await Shell.Current.GoToAsync($"{nameof(FoundDriverPage)}?{nameof(FoundDriverPageViewModel.serchDriver)}={driver}");
         }
     }
 }

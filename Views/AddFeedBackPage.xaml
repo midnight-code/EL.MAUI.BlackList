@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.AddFeedBackPage"
+             xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="vm:AddFeedBackPageViewModel"
+             Title="AddFeedBackPage" BackgroundColor="Black">
+    <VerticalStackLayout Margin="0,15,0,0">
+        <Border StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40" Background="#000" Padding="36,10" HorizontalOptions="Center">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFFF00"
+                          Offset="0.1" />
+                    <GradientStop Color="Brown"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Label Text="Новый отзыв" HorizontalOptions="Center" TextColor="#FFFF00" FontSize="Title" FontAttributes="Bold" Padding="0" FontFamily="BLAGO"/>
+            <!--<Image Source="car1.png" Aspect="AspectFill" Margin="0" HeightRequest="100" WidthRequest="150"/>-->
+        </Border>
+        <Grid Margin="10,15,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                <Label Text="Дата:" FontFamily="BLAGO" TextColor="#FFFF00" FontAttributes="Bold" VerticalOptions="Center"  Margin="0,0,0,0"/>
+                <DatePicker TextColor="White" FontAttributes="Bold" VerticalOptions="Center"  Format="dd.MM.yyyy"
+                                             Date="{Binding FeedBack.AddDate}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="15,0,0,0">
+                <Label Text="Такопарк:" FontFamily="BLAGO" TextColor="#FFFF00" FontAttributes="Bold" VerticalOptions="Center"  Margin="0,0,0,0"/>
+                <Label  Text="Батруднинов Михаил Фёлорович" TextColor="White" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="15,0,0,0">
+                <Label Text="Область:" FontFamily="BLAGO" TextColor="#FFFF00" FontAttributes="Bold" VerticalOptions="Center"  Margin="0,0,0,0"/>
+                <Label  Text="ростовская область" TextColor="White" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0">
+                <Label Text="Город:" FontFamily="BLAGO" TextColor="#FFFF00" FontAttributes="Bold" VerticalOptions="Center"  Margin="0,0,0,0"/>
+                <Label  Text="Ростов-на-Дону" TextColor="White" />
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Grid.Row="2" Grid.ColumnSpan="3" Margin="0,15,0,0">
+                <Label Text="Отзыв" TextColor="#FFFF00" FontFamily="BLAGO" FontSize="15" FontAttributes="Bold"/>
+                <Editor Text="{Binding FeedBack.Subjest}" TextColor="White" AutoSize="TextChanges"
+                    Placeholder="Введите отзыв" PlaceholderColor="DarkGray"/>
+            </VerticalStackLayout>
+            
+        </Grid>
+        <HorizontalStackLayout>
+            <Button Grid.Row="4" Text="Отмена" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="15" FontAttributes="Bold"
+                CornerRadius="30" WidthRequest="170" HeightRequest="45" Margin="10,15,0,0" Command="{Binding BackCommand}" />
+            <Button Grid.Row="4" Text="Добавить отзыв" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="15" FontAttributes="Bold"
+                CornerRadius="30" WidthRequest="198" HeightRequest="45" Margin="10,15,0,0" Command="{Binding AddFeedBackCommand}" />
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>

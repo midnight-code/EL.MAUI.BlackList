@@ -30,7 +30,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-		<PackageCertificateThumbprint>A297A90D8FF744EDC3FAA35A9886E7D41F36DCFD</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>940125E89F767A0F9999392715272553569D20D2</PackageCertificateThumbprint>
 		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
 		<AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
 		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
@@ -58,7 +58,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="MainPage.xaml.cs" />
 	  <Compile Remove="ViewModel\FeedBackDetailsModalViewModel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="MainPage.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -80,6 +85,16 @@
 	  <None Remove="Resources\Images\icon_about.png" />
 	  <None Remove="Resources\Images\icon_calendar.png" />
 	  <None Remove="Resources\Images\icon_feed.png" />
+	  <None Remove="Resources\Images\ico_abouts.png" />
+	  <None Remove="Resources\Images\ico_back.png" />
+	  <None Remove="Resources\Images\ico_contact.png" />
+	  <None Remove="Resources\Images\ico_dashbourd.png" />
+	  <None Remove="Resources\Images\ico_finance.png" />
+	  <None Remove="Resources\Images\ico_personal.png" />
+	  <None Remove="Resources\Images\ico_serch.png" />
+	  <None Remove="Resources\Images\ico_servicecs.png" />
+	  <None Remove="Resources\Images\ico_user.png" />
+	  <None Remove="Resources\Images\ico_users.png" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\NoAvatar.png" />
 	  <None Remove="Resources\Images\nodriver.jpg" />
@@ -103,10 +118,19 @@
 	  <MauiXaml Update="Views\AddDriverPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AddFeedBackPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ContactPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\DriverDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\FinanceServicesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\FoundDriverPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HomePage.xaml">
@@ -115,7 +139,19 @@
 	  <MauiXaml Update="Views\FeedBackDetailsModalPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\NewDriverPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PersonalArea.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PersonalAreaServices.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SerchDriversPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ServicesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

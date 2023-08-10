@@ -38,7 +38,6 @@ namespace EL.MAUI.BlackList.Services
             var result = await _httpClient.PostAsJsonAsync($"savedriver/{drivers}", drivers);
             BaseResponse<int> id = await result.Content.ReadFromJsonAsync<BaseResponse<int>>();
             return id.Data;
-            ///Вернуть id водителя
         }
     }
 }

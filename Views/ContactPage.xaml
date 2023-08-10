@@ -5,9 +5,6 @@
              Title="Техподдержка"  BackgroundColor="Black">
     <Shell.TitleView>
         <HorizontalStackLayout>
-            <Image VerticalOptions="Start" HorizontalOptions="Center"
-                       Source="car1.png"
-                       Opacity="0.6" HeightRequest="50" WidthRequest="100" />
             <Label 
         Text="Контакты"
         HorizontalOptions="Center"

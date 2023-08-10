@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using EL.MAUI.BlackList.Models;
 using EL.MAUI.BlackList.Services;
 using EL.MAUI.BlackList.Views;
+using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,24 +15,23 @@ namespace EL.MAUI.BlackList.ViewModel
 {
     internal partial class HomePageViewModel : ObservableObject
     {
-        
-        [ObservableProperty]
-        private SerchDriver driversColl = new();
-
-        [ObservableProperty]
-        private string firstname;
-
-        [ObservableProperty]
-        private string lastname;
-        [ObservableProperty]
-        private string secondname;
-
+     
+        [RelayCommand]
+        private async Task SerchDriver()
+        {
+            await Shell.Current.Navigation.PushAsync(new SerchDriversPage());
+        }
 
         [RelayCommand]
-        private async Task GetDriverByNameAsync()
+        private async Task AddNewDriver()
         {
-            string driver = $"{Firstname},{Lastname},{Secondname}";
-            await Shell.Current.GoToAsync($"{nameof(SerchDriversPage)}?{nameof(SerchDriverViewModel.serchDriver)}={driver}");
+            await Shell.Current.Navigation.PushAsync(new AddDriverPage());
+        }
+
+        [RelayCommand]
+        private async Task AddFeedbackDriver()
+        {
+            await Shell.Current.Navigation.PushAsync(new AddFeedBackPage());
         }
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.PersonalArea"
+             xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="vm:PersonalAreaViewModel"
+             BackgroundColor="Black">
+    <!--<Shell.TitleView>
+        <Label Text="Личный кабинет" TextColor="#FFFF00" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center"
+       FontFamily="BLAGO"  Margin="7,5,0,2" />
+    </Shell.TitleView>-->
+    
+    <VerticalStackLayout>
+        <Border StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40" Background="#000" Padding="36,10" HorizontalOptions="Center">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFFF00"
+                          Offset="0.1" />
+                    <GradientStop Color="Brown"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Label Text="Личный кабинет" HorizontalOptions="Center" TextColor="#FFFF00" FontSize="Title" FontAttributes="Bold" Padding="0" FontFamily="BLAGO"/>
+        </Border>
+        <Button Grid.Row="4" Text="Персональные данные" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="15" FontAttributes="Bold"
+                CornerRadius="30" WidthRequest="300" HeightRequest="45" Margin="0,15,0,0" ImageSource="ico_personal.png" ContentLayout="Left" Command="{Binding PersonalAreaServicesCommand}" />
+
+        <Button Grid.Row="4" Text="Настройки" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="17" FontAttributes="Bold"
+                CornerRadius="30" WidthRequest="300" HeightRequest="45" Margin="0,25,0,0" ImageSource="ico_servicecs.png" ContentLayout="Left" Command="{Binding ServicesCommand}" />
+        <Button Grid.Row="4" Text="Финансы" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="17" FontAttributes="Bold"
+                CornerRadius="30" WidthRequest="300" HeightRequest="45" Margin="0,25,0,0" ImageSource="ico_finance.png" ContentLayout="Left" Command="{Binding FinanceServicesCommand}" />
+
+    </VerticalStackLayout>
+</ContentPage>

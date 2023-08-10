@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using EL.MAUI.BlackList.Models;
 using EL.MAUI.BlackList.Services;
+using EL.MAUI.BlackList.Views;
 using Microsoft.Maui.Storage;
 using System;
 using System.Collections.Generic;
@@ -99,6 +100,7 @@ internal partial class AddDriverPageViewModel : ObservableObject
 
 
         IsTaskRunning = false;
+        await Shell.Current.GoToAsync($"{nameof(NewDriverPage)}?{nameof(NewDariverPageViewModel.driverid)}={result}");
     }
 
     [RelayCommand]
