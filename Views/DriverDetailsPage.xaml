@@ -33,7 +33,7 @@
                     <Label Text="Ф.И.О" FontFamily="BLAGO" FontAttributes="Bold" HorizontalOptions="Center" Margin="5,0,0,0" TextColor="#FFFF00"/>
                     <Label Text="{Binding Driver.FirstName}" Margin="7,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
                     <Label Text="{Binding Driver.LastName}" Margin="5,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
-                    <Label Text="{Binding Driver.SecondName}" Margin="5,0,0,0" TextColor="White"/>
+                    <Label Text="{Binding Driver.SecondName}" Margin="5,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Grid.Row="1" >
                     <Label Text="Дата рождения" FontFamily="BLAGO" FontAttributes="Bold" Margin="5,0,0,0" TextColor="#FFFF00"/>
@@ -43,7 +43,7 @@
             </Grid>
         </Grid>
 
-        <ListView ItemsSource="{Binding Driver.FeedBacks}" HasUnevenRows="True" Margin="0,7,0,0" HorizontalOptions="Fill" ItemTapped="ListView_ItemTapped">
+        <ListView ItemsSource="{Binding Driver.FeedBacks}" HasUnevenRows="True" Margin="0,7,0,0" RowHeight="50" ItemTapped="ListView_ItemTapped">
             <ListView.Header>
                 <VerticalStackLayout BackgroundColor="Black">
                     <Label HorizontalOptions="Center" FontAttributes="Bold" FontFamily="BLAGO" Text="Отзывы:" TextColor="#FFFF00" />

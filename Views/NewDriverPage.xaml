@@ -51,7 +51,7 @@
             </Grid>
         </Grid>
 
-        <ListView ItemsSource="{Binding Driver.FeedBacks}" HasUnevenRows="True" Margin="0,7,0,0" HorizontalOptions="Fill" ItemTapped="ListView_ItemTapped">
+        <ListView ItemsSource="{Binding Driver.FeedBacks}" HasUnevenRows="True" Margin="0,7,0,0" RowHeight="50" ItemTapped="ListView_ItemTapped">
             <ListView.Header>
                 <VerticalStackLayout BackgroundColor="Black">
                     <Label HorizontalOptions="Center" FontAttributes="Bold" FontFamily="BLAGO" Text="Отзывы:" TextColor="#FFFF00" />

@@ -5,10 +5,6 @@
              xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
              x:DataType="vm:PersonalAreaViewModel"
              BackgroundColor="Black">
-    <!--<Shell.TitleView>
-        <Label Text="Личный кабинет" TextColor="#FFFF00" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center"
-       FontFamily="BLAGO"  Margin="7,5,0,2" />
-    </Shell.TitleView>-->
     
     <VerticalStackLayout>
         <Border StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40" Background="#000" Padding="36,10" HorizontalOptions="Center">
