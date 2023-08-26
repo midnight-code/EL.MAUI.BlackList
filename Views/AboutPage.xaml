@@ -2,16 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EL.MAUI.BlackList.Views.AboutPage"
-             Title="О программе"  BackgroundColor="Black">
-    <Shell.TitleView>
-        <HorizontalStackLayout>
-            <Label 
-        Text="О программе" VerticalOptions="Center" HorizontalOptions="Center"
-        TextColor="#FFFF00" FontSize="30"
-       FontFamily="BLAGO"  Margin="0,5,0,0" />
-        </HorizontalStackLayout>
-    </Shell.TitleView>
-    <Grid>
+             BackgroundColor="Black">
+    
+    <VerticalStackLayout>
+        <Border StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40" Background="#000" Padding="36,10" HorizontalOptions="Center">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFFF00"
+                   Offset="0.1" />
+                    <GradientStop Color="Brown"
+                   Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Label Text="О программе" HorizontalOptions="Center" TextColor="#FFFF00" FontSize="Title" FontAttributes="Bold" Padding="0" FontFamily="BLAGO"/>
+        </Border>
+
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -41,6 +47,6 @@
                 </TableRoot>
             </TableView>
     </Grid>
-    
+    </VerticalStackLayout>
     
 </ContentPage>

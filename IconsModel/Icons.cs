@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EL.MAUI.BlackList.Models
+namespace EL.MAUI.BlackList.IconsModel
 {
     public static class Icons
     {

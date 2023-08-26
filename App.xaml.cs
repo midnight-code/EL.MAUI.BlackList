@@ -1,11 +1,13 @@
-﻿namespace EL.MAUI.BlackList;
+﻿using EL.MAUI.BlackList.Services;
+using EL.MAUI.BlackList.Views;
+
+namespace EL.MAUI.BlackList;
 
 public partial class App : Application
 {
-	public App()
+    public App()
 	{
 		InitializeComponent();
-
-		MainPage = new AppShell();
+        MainPage = new PinPage();
 	}
 }

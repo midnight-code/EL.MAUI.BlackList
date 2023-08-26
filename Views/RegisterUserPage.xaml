@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.Views.RegisterUserPage"
+             xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="vm:RegisterUserPageViewModel"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <!--<Shell.TitleView>
+        <Label Text="Регистрация" TextColor="#FFFF00" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center"
+               FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>-->
+    
+    <VerticalStackLayout>
+        
+        <ScrollView>
+            <Grid BackgroundColor="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid RowSpacing="5" Grid.Row="1" Margin="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="car1.png" HorizontalOptions="Center" Margin="0"/>
+                    <Border Grid.Row="1" StrokeThickness="4" StrokeShape="RoundRectangle 40,10,10,40" Background="#000" Padding="40,0" HorizontalOptions="Center">
+                        <Border.Stroke>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="#FFFF00" Offset="0.1" />
+                                <GradientStop Color="Brown" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+                        <Label Text="Регистрация" HorizontalOptions="Center" TextColor="#FFFF00" FontSize="38" FontAttributes="Bold" Padding="0" FontFamily="BLAGO"/>
+                    </Border>
+                    <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0">
+                        <Frame BackgroundColor="Transparent" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="#FFFF00" HeightRequest="40" WidthRequest="40" CornerRadius="35" Padding="0" Margin="5">
+                                    <Image Source="user.png" Aspect="AspectFill" Margin="0" HeightRequest="35" WidthRequest="35"/>
+                                </Frame>
+                                <Entry Text="{Binding Loginname}" Placeholder="Ваш e-mail" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="#FFFF00" HeightRequest="40" WidthRequest="40" CornerRadius="35" Padding="0" Margin="5">
+                                    <Image Source="lock.png" Aspect="AspectFill" Margin="0" HeightRequest="35" WidthRequest="35"/>
+                                </Frame>
+                                <Entry Text="{Binding Password}" Placeholder="Пароль" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="#FFFF00" HeightRequest="40" WidthRequest="40" CornerRadius="35" Padding="0" Margin="5">
+                                    <Image Source="lock.png" Aspect="AspectFill" Margin="0" HeightRequest="35" WidthRequest="35"/>
+                                </Frame>
+                                <Entry Text="{Binding ConfirmPassword}" Placeholder="Повтор пароля" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
+                        <Button Text="Регистрация" BackgroundColor="#FFFF00" TextColor="Black"
+                                FontFamily="BLAGO" FontAttributes="Bold" CornerRadius="30"
+                                WidthRequest="200" Margin="0,15,0,0" Command="{Binding RegisterUserCommand}" />
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
+    <!--+79185263035 ремонт холодильника-->

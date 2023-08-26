@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.MAUI.BlackList.PinPage"
+             xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
+             x:DataType="vm:PinPageViewModel"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="Black"
+			 >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <StackLayout>
+                <Label Text="Balck List" TextColor="#FFFF00" FontSize="125"
+                   FontFamily="MagicSchool" />
+                <Frame Padding="0" Margin="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent">
+                    <Image Source="car1.png" Aspect="AspectFill" Margin="0" WidthRequest="200"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="lblCode" Text="Повторите ввод" FontSize="30" TextColor="Red" HorizontalOptions="Center" Margin="0,15,0,0" />
+                <Label x:Name="lblPinCode" Text="****" FontSize="50" HorizontalOptions="Center" Margin="0,15,0,0" />
+
+            </StackLayout>
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0"
+                    Text="7" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                    Text="8" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="0" Grid.Column="2"
+                    Text="9" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="1" Grid.Column="0"
+                    Text="4" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="1" Grid.Column="1"
+                    Text="5" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="1" Grid.Column="2"
+                    Text="6" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="2" Grid.Column="0"
+                    Text="1" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="2" Grid.Column="1"
+                    Text="2" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="2" Grid.Column="2"
+                    Text="3" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+                <Button Grid.Row="3" Grid.Column="1"
+                    Text="0" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="30" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="70" Margin="0,10,0,0" Command="{Binding addPinCodeCommand}"/>
+
+
+            </Grid>
+
+
+
+
+
+
+
+
+            <StackLayout x:Name="NewPinCode">
+                <Label Text="Enter new pin code!"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" TextColor="Black" />
+                <Button Text="Вход" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="20" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding addPinCodeCommand}"/>
+            </StackLayout>
+            <StackLayout x:Name="PinCode">
+                <Label Text="Enter pin code!"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" TextColor="Black" />
+                <Button Text="Вход" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="20" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding addPinCodeCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

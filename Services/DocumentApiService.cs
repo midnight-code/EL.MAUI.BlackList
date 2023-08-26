@@ -1,4 +1,5 @@
-﻿using EL.MAUI.BlackList.Models;
+﻿using EL.MAUI.BlackList.Helpers;
+using EL.MAUI.BlackList.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace EL.MAUI.BlackList.Services
         {
             _httpClient = new HttpClient 
             {
-                BaseAddress = new Uri("https://czz.itiss.ru/")
+                BaseAddress = new Uri(UriHelp.UriString)
             };
         }
 

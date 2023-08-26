@@ -4,13 +4,14 @@
              x:Class="EL.MAUI.BlackList.Views.NewDriverPage"
              xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
              x:DataType="vm:NewDariverPageViewModel"
+             xmlns:icons="clr-namespace:EL.MAUI.BlackList.IconsModel"
              xmlns:model="clr-namespace:EL.MAUI.BlackList.Models"
              xmlns:local="clr-namespace:EL.MAUI.BlackList.Helpers"
              BackgroundColor="Black">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding BackCommand}"
-                            IconOverride="{x:Static model:Icons.BackPage}" />
+                            IconOverride="{x:Static icons:Icons.BackPage}" />
     </Shell.BackButtonBehavior>
     
     <ContentPage.Resources>

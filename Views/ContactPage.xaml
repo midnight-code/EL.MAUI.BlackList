@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:EL.MAUI.BlackList.IconsModel"
              x:Class="EL.MAUI.BlackList.Views.ContactPage"
-             Title="Техподдержка"  BackgroundColor="Black">
-    <Shell.TitleView>
-        <HorizontalStackLayout>
-            <Label 
-        Text="Контакты"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        TextColor="#FFFF00" FontSize="30"
-       FontFamily="BLAGO"  Margin="0,5,0,0" />
-        </HorizontalStackLayout>
-    </Shell.TitleView>
+             BackgroundColor="Black">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}"
+                            IconOverride="{x:Static model:Icons.BackPage}" />
+    </Shell.BackButtonBehavior>
+
     <VerticalStackLayout>
-        <Label TextColor="White"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Border StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40" Background="#000" Padding="36,10" HorizontalOptions="Center">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFFF00"
+                  Offset="0.1" />
+                    <GradientStop Color="Brown"
+                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Label Text="Контакты" HorizontalOptions="Center" TextColor="#FFFF00" FontSize="Title" FontAttributes="Bold" Padding="0" FontFamily="BLAGO"/>
+            <!--<Image Source="car1.png" Aspect="AspectFill" Margin="0" HeightRequest="100" WidthRequest="150"/>-->
+        </Border>
+
     </VerticalStackLayout>
 </ContentPage>

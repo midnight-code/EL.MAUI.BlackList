@@ -4,7 +4,7 @@
              x:Class="EL.MAUI.BlackList.Views.AddFeedBackPage"
              xmlns:vm="clr-namespace:EL.MAUI.BlackList.ViewModel"
              x:DataType="vm:AddFeedBackPageViewModel"
-             Title="AddFeedBackPage" BackgroundColor="Black">
+             BackgroundColor="Black">
     <VerticalStackLayout Margin="0,15,0,0">
         <Border StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40" Background="#000" Padding="36,10" HorizontalOptions="Center">
             <Border.Stroke>
